@@ -1,7 +1,6 @@
 import { getUser } from '@/lib/auth'
 import { LogOut } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export function Profile() {
   const { name, avatarUrl } = getUser()
@@ -20,13 +19,13 @@ export function Profile() {
 
       <p className="max-w-[140px] text-sm leading-snug">
         {name}
-        <Link
-          href=""
+        <a
+          href="/api/auth/logout"
           className="group block text-red-400 transition-colors hover:text-red-500"
         >
           <LogOut className="mr-1 inline h-4 w-4 text-red-400 transition-colors group-hover:text-red-500" />
           Quero sair
-        </Link>
+        </a>
       </p>
     </div>
   )
